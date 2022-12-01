@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+h1, h2, h3, h4, p, button, div {
+    font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 24px 0;
+}
+
+p {
+    line-height: 24px;
+}
+
+
+body {
+    padding: 32px 16px;
+    background-image: url('assets/bgexample.jpg');
+    height: 100vh;
+    background-size: cover;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    label {
+        margin: 0 0 8px;
+    }
+    input {
+        padding: 16px 8px;
+        border-radius: 6px;
+        border: 1px solid black;
+        margin-bottom: 8px;
+    }
+}
+
+.green {
+  color: green;
+}
+
+.red {
+    color: red;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  
+    &__inputs {
+      display: flex;
+      flex-direction: column;
+    }
+    &__results {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 768px){
+    .form {
+      flex-wrap: wrap;
+      &__inputs {
+        width: 100%;
+      }
+      &__results {
+        width: 100%;
+      }
+    }
+  }
+
+  button {
+    margin: 0 10px;
+}
+
+button:first-of-type {
+    margin-left: 0;
+}
+
+button:last-of-type {
+    margin-right: 0;
+}
+
+.alternate-button {
+    border: 1px solid rosybrown;
+    color: rosybrown;
+    font-weight: 600;
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.action-button {
+    background-color: rosybrown;
+    color: white;
+    font-weight: 600;
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 16px;
+
+}
+
+.submit-result-button {
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    margin: 8px 0 8px;
+    border: 1px solid green
+}
+
+.submit-result-button:disabled {
+    background-color: gray;
+}
