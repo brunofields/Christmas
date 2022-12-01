@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
@@ -7,7 +8,14 @@ import { interval, Subscription } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy{
+
+  challengeForm = new FormGroup({
+    password: new FormControl('', Validators.required),
+  });
+
   title = 'merry-christmas';
+
+  challengeResult!: string;
 
   private subscription = new Subscription();
   
@@ -37,6 +45,10 @@ private allocateTimeUnits(timeDifference: any) {
       this.daysToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute * this.hoursInADay));
 }
 
+get isFormValid(): boolean {
+  return this.challengeForm.valid;
+}
+
   ngOnInit() {
      this.subscription = interval(1000)
          .subscribe(x => { this.getTimeDifference(); });
@@ -44,6 +56,10 @@ private allocateTimeUnits(timeDifference: any) {
 
  ngOnDestroy() {
     this.subscription.unsubscribe();
+ }
+
+ submit() {
+  this.challengeResult = "Ops, acho que não é bem isso... Tente novamente, talvez mais tarde?"
  }
 
 }

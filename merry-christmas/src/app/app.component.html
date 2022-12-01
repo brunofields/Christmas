@@ -4,6 +4,24 @@
 
 </div>
 
+<div class="default">
+  <form class="form" [formGroup]="challengeForm">
+    <div class="form__inputs">
+      <div class="form-field">
+        <label>Digite a resposta: </label>
+        <input maxlength="10" formControlName="password" type="text" />
+      </div>
+    </div>
+    <div class="form__results">
+      <button (click)="submit()" [disabled]="!isFormValid" type="submit" class="submit-result-button">solucionar</button>
+    </div>
+  </form>
+  <ng-container *ngIf="challengeResult">
+    <span class="red">{{ challengeResult }}</span>
+</ng-container>
+</div>
+
+
 <div class="timer default">
   <h3>Tempo restante para solucionar:</h3>
   <span id="days"> {{daysToDday}} </span>Dias
