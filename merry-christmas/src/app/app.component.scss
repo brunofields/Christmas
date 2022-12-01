@@ -1,0 +1,26 @@
+.default {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 30px;
+
+}
+
+
+.timer {
+
+    h3{
+        margin-top: 0;
+       text-align: left; 
+    }
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+  }
+  .timer span {
+    font-size: 2rem;
+    margin: 0 3px 0 15px;
+  }
