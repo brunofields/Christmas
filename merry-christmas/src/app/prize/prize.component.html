@@ -27,40 +27,32 @@
     </div>
 </ng-container>
 
-<!-- <img src="../../assets/clogo.png" width="100%"> -->
-
-
-
-
-
-
 <ng-container *ngIf="showPrize">
     <ng-container *ngIf="!startSong">
 
         <h1>Parece que chegou a hora...</h1>
 
         <audio preload="auto" autoplay="">
-            <source src="../../assets/audio-new.mp3">
+            <source src="assets/audio-new.mp3">
         </audio>
     </ng-container>
 
     <ng-container *ngIf="startSong">
         <audio preload="auto" autoplay="">
-            <source src="../../assets/hpow.mp3">
+            <source src="assets/hpow.mp3">
         </audio>
 
         <ng-container *ngIf="showTickets">
 
-            <h1>Partiu Coldplay?</h1>
             <video playsinline="" class="homepage-video__media" autoplay="" loop="" muted="" preload="auto"
                 aria-hidden="true" width="100%">
-                <source src="../../assets/MOTS.mp4" type="video/mp4">
+                <source src="assets/MOTS.mp4" type="video/mp4">
             </video>
 
 
             <div class="ticket">
                 <div class="ticket-img">
-                    <img src="../../assets/tickets-ticket-svgrepo-com.svg">
+                    <img src="assets/tickets-ticket-svgrepo-com.svg">
                 </div>
                 <div class="ticket-text">
                     <h3>Larissa dos Santos Silva</h3>
@@ -72,7 +64,7 @@
 
             <div class="ticket">
                 <div class="ticket-img">
-                    <img src="../../assets/tickets-ticket-svgrepo-com.svg">
+                    <img src="assets/tickets-ticket-svgrepo-com.svg">
                 </div>
                 <div class="ticket-text">
                     <h3>Bruno Campos</h3>

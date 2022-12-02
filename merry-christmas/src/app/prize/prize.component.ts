@@ -24,10 +24,10 @@ export class PrizeComponent implements OnInit {
 
   emitShowPrize() {
     this.showPrize = true;
-    timer(5000).subscribe(() => {
+    timer(26000).subscribe(() => {
       this.startSong = true;
 
-      timer(1300).subscribe(() => {
+      timer(1400).subscribe(() => {
         this.showTickets = true;
       })
     })
