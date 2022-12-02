@@ -2,8 +2,6 @@
 
     <h1>Muito bem!!</h1>
     <p>Você se provou digna de receber seu prêmio!!</p>
-    <p>Espero que goste, é algo que está guardado comigo tem um tempo e eu fico feliz de finalmente compartilha-lo com
-        você!</p>
     <p>Mal posso esperar pra aproveitar <strong>nosso tempo</strong> junto vivendo essa nova lembrança.</p>
 
 
@@ -28,54 +26,9 @@
 </ng-container>
 
 <ng-container *ngIf="showPrize">
-    <ng-container *ngIf="!startSong">
-
         <h1>Parece que chegou a hora...</h1>
 
         <audio preload="auto" autoplay="">
-            <source src="assets/audio-new.mp3">
+            <source src="/Christmas/assets/audio-new.mp3">
         </audio>
-    </ng-container>
-
-    <ng-container *ngIf="startSong">
-        <audio preload="auto" autoplay="">
-            <source src="assets/hpow.mp3">
-        </audio>
-
-        <ng-container *ngIf="showTickets">
-
-            <video playsinline="" class="homepage-video__media" autoplay="" loop="" muted="" preload="auto"
-                aria-hidden="true" width="100%">
-                <source src="assets/MOTS.mp4" type="video/mp4">
-            </video>
-
-
-            <div class="ticket">
-                <div class="ticket-img">
-                    <img src="assets/tickets-ticket-svgrepo-com.svg">
-                </div>
-                <div class="ticket-text">
-                    <h3>Larissa dos Santos Silva</h3>
-                    <p>Coldplay - Music of the Spheres World Tour</p>
-                    <p>Estádio do Morumbi - São Paulo</p>
-                    <p>Sexta - 17/03/2023</p>
-                </div>
-            </div>
-
-            <div class="ticket">
-                <div class="ticket-img">
-                    <img src="assets/tickets-ticket-svgrepo-com.svg">
-                </div>
-                <div class="ticket-text">
-                    <h3>Bruno Campos</h3>
-                    <p>Coldplay - Music of the Spheres World Tour</p>
-                    <p>Estádio do Morumbi - São Paulo</p>
-                    <p>Sexta - 17/03/2023</p>
-                </div>
-            </div>
-
-            <h2>Espero que tenha gostado, eu amo você demais!!</h2>
-        </ng-container>
-
-    </ng-container>
 </ng-container>
