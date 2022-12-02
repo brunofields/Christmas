@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 h1, h2, h3, h4, p, button, div {
-    font-family: "Open Sans", sans-serif;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
 }
 
 h1 {
@@ -17,7 +17,6 @@ p {
 body {
     padding: 32px 16px;
     background-image: url('assets/bgexample.jpg');
-    height: 100vh;
     background-size: cover;
 }
 

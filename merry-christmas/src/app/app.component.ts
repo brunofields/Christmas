@@ -1,6 +1,8 @@
+import { PuzzleService } from './shared/services/puzzle.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { interval, Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +11,17 @@ import { interval, Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy{
 
+  constructor(private puzzleService: PuzzleService, private router: Router) {
+
+  }
+
+
   challengeForm = new FormGroup({
     password: new FormControl('', Validators.required),
   });
+
+  hasSolvedPuzzle = this.puzzleService.hasSolvedPuzzle;
+
 
   title = 'merry-christmas';
 
@@ -59,7 +69,14 @@ get isFormValid(): boolean {
  }
 
  submit() {
-  this.challengeResult = "Ops, acho que não é bem isso... Tente novamente, talvez mais tarde?"
+   const pwd = this.challengeForm.get('password')?.value;
+   if (this.puzzleService.solution.includes(pwd)) {
+     this.hasSolvedPuzzle = true;
+     this.puzzleService.setSolvedPuzzle(true);
+     this.router.navigate(['/prize']);
+    } else {
+      this.challengeResult = "Ops, acho que não é bem isso... Tente novamente, talvez mais tarde?"
+  }
  }
 
 }
