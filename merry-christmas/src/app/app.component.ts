@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit, OnDestroy{
 
+  woah = new Audio('/Christmas/assets/woah.mp3');
+
   constructor(private puzzleService: PuzzleService, private router: Router) {
 
   }
@@ -75,6 +77,7 @@ get isFormValid(): boolean {
      this.puzzleService.setSolvedPuzzle(true);
      this.router.navigate(['/prize']);
     } else {
+      this.woah.play();
       this.challengeResult = "Ops, acho que não é bem isso... Tente novamente, talvez mais tarde?"
   }
  }

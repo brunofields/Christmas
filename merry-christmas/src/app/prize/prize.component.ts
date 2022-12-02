@@ -22,7 +22,7 @@ export class PrizeComponent implements OnInit {
 
   emitShowPrize() {
     this.showPrize = true;
-    timer(2000).subscribe(() => {
+    timer(26000).subscribe(() => {
       this.router.navigate(['/ticket'])
     })
   }
