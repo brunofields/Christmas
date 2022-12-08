@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit, OnDestroy{
 
   woah = new Audio('/Christmas/assets/woah.mp3');
+  clock = new Audio('/Christmas/assets/clock.mp3');
+
+  customReturnMessage = ['relogio', 'relógio', 'clock', 'watch']
 
   constructor(private puzzleService: PuzzleService, private router: Router) {
 
@@ -72,6 +75,14 @@ get isFormValid(): boolean {
 
  submit() {
    const pwd = this.challengeForm.get('password')?.value;
+
+
+  if (this.customReturnMessage.includes(pwd)) {
+    this.clock.play();
+    this.challengeResult = "algo aconteceu, a informação que você precisa já está nas charadas"
+    return;
+  }
+
    if (this.puzzleService.solution.includes(pwd)) {
      this.hasSolvedPuzzle = true;
      this.puzzleService.setSolvedPuzzle(true);
