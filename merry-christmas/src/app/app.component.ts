@@ -13,8 +13,11 @@ export class AppComponent implements OnInit, OnDestroy{
 
   woah = new Audio('/Christmas/assets/woah.mp3');
   clock = new Audio('/Christmas/assets/clock.mp3');
+  ily = new Audio('/Christmas/assets/ily.mp3');
 
-  customReturnMessage = ['relogio', 'relógio', 'clock', 'watch']
+  customReturnMessage = ['relogio', 'relógio', 'clock', 'watch', 'Relogio', 'Relógio', 'Clock', 'Watch']
+
+  numberReturnMessage = ['i love you'];
 
   constructor(private puzzleService: PuzzleService, private router: Router) {
 
@@ -75,6 +78,12 @@ get isFormValid(): boolean {
 
  submit() {
    const pwd = this.challengeForm.get('password')?.value;
+
+   if (this.numberReturnMessage.includes(pwd)) {
+    this.ily.play();
+    this.challengeResult = "você ganhou uma nova dica: a senha para desbloquear seu prêmio é composta de apenas números."
+    return;
+  }
 
 
   if (this.customReturnMessage.includes(pwd)) {
