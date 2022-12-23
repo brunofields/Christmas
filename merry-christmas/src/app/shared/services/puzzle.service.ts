@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class PuzzleService {
 
   private _hasSolvedPuzzle = false;
-  private _solution = ['9873303122'];
+  private _solution = ['047','0047','1247'];
 
   public get hasSolvedPuzzle(): boolean {
     return this._hasSolvedPuzzle;
